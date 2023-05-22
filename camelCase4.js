@@ -19,14 +19,14 @@ function splitCamelCase(name) {
     words.push(currentWord);
   }
 
-  return words.join(" ").trim();
+  return words.join(" ");
 }
 
 function combineCamelCase(words, type) {
   let combined = "";
 
   for (let i = 0; i < words.length; i++) {
-    let word = words[i];
+    let word = words[i].trim();
     if (type === "C" || i > 0) {
       word = word.charAt(0).toUpperCase() + word.slice(1);
     }
@@ -37,7 +37,7 @@ function combineCamelCase(words, type) {
     combined += "()";
   }
 
-  return combined.trim();
+  return combined;
 }
 
 function processData(input) {
