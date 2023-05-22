@@ -4,6 +4,9 @@ function splitCamelCase(name) {
 
   for (let i = 0; i < name.length; i++) {
     const char = name[i];
+    if (char === "(" || char === ")") {
+      continue;
+    }
     if (char === char.toLowerCase()) {
       currentWord += char;
     } else {
