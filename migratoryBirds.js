@@ -34,7 +34,7 @@ function migratoryBirds(arr) {
     let newArr = {}
     const uniqueVal = [... new Set(arr)]
     uniqueVal.forEach(el => {
-        const filterVal = arr.filter(val => val == el)
+        const filterVal = arr.filter(val => val === el)
         const totalVal = filterVal.length
         newArr[el] = totalVal
     })
