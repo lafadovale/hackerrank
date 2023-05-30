@@ -39,6 +39,7 @@ function migratoryBirds(arr) {
         newArr[el] = totalVal
     })
     
+    // Estudar os métodos do Object 
     let result = Object.entries(newArr).sort(([,a], [,b]) => b - a)
     let final = result[0][0]
     return final    
