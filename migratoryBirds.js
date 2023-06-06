@@ -1,27 +1,3 @@
-'use strict';
-
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
 /*
  * Complete the 'migratoryBirds' function below.
  *
@@ -30,31 +6,17 @@ function readLine() {
  */
 
 function migratoryBirds(arr) {
-    // Write your code here
-    let newArr = {}
-    const uniqueVal = [... new Set(arr)]
-    uniqueVal.forEach(el => {
-        const filterVal = arr.filter(val => val === el)
-        const totalVal = filterVal.length
-        newArr[el] = totalVal
-    })
-    
-    // Estudar os métodos do Object 
-    let result = Object.entries(newArr).sort(([,a], [,b]) => b - a)
-    let final = result[0][0]
-    return final    
-}
+  // Write your code here
+  let newArr = {};
+  const uniqueVal = [...new Set(arr)];
+  uniqueVal.forEach((el) => {
+    const filterVal = arr.filter((val) => val === el);
+    const totalVal = filterVal.length;
+    newArr[el] = totalVal;
+  });
 
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const arrCount = parseInt(readLine().trim(), 10);
-
-    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
-
-    const result = migratoryBirds(arr);
-
-    ws.write(result + '\n');
-
-    ws.end();
+  // Estudar os métodos do Object
+  let result = Object.entries(newArr).sort(([, a], [, b]) => b - a);
+  let final = result[0][0];
+  return final;
 }
