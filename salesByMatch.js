@@ -18,5 +18,3 @@ function sockMerchant(n, ar) {
   });
   return pairs;
 }
-
-// no worries
