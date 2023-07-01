@@ -16,5 +16,5 @@ function sockMerchant(n, ar) {
     const count = Math.floor(filtered.length / 2);
     pairs += count;
   });
-  return pairs;
+  return pairs; //
 }
