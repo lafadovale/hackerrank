@@ -26,4 +26,3 @@ function diagonalDifference(arr) {
 
   return Math.abs(d1 - d2);
 }
-//
